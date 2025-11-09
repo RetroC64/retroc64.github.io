@@ -1,0 +1,494 @@
+/**********************************************
+ * general
+ **********************************************/
+
+ /*
+$body-bg: #28282A;
+$body-color: #445258;
+$secondary:  #FF7F2A;
+$body-color-bold-shadow: lighten($body-color, 20%);
+$primary: #138496;
+$breadcrumb-bg: $body-bg;
+*/
+
+$retroc64-top-offset: 74px;
+$font-size-base: 1.25rem;
+$font-family-base: Figtree, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+ 
+$bootstrap-icons-font-dir: "/fonts";
+
+@import "bootstrap";
+@import "bootstrap-icons";
+
+:root {
+    --bs-body-bg-rgb: 31, 30, 50;
+    --bs-body-bg: rgb(31, 30, 50);
+}
+
+@font-face {
+    font-family: 'Figtree';
+    src: url('/fonts/Figtree-VariableFont_wght.ttf') format('truetype');
+
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+$search-bg: lighten($body-bg, 5%);
+
+.retroc64-logo {
+    background: transparent url("/img/retroc64-logo.png") no-repeat scroll center/contain;
+    display: block;
+    width: 96px;
+    height: 96px;    
+}
+
+body {
+    width: calc(100vw - 34px); /* https://stackoverflow.com/a/25981719 */
+}
+
+a {
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    outline: none;
+    padding-bottom: 0.25em;
+    scroll-margin-top: $retroc64-top-offset;
+}
+h2 {
+    border-bottom: solid;    
+}
+
+#retroc64 .breadcrumb {
+    padding-left: 0.1rem
+}
+
+.retroc64-color-0 { 
+    color: #FF7F2A; 
+}
+.retroc64-color-1 {
+    color: #FFCC00; 
+}
+.retroc64-color-2 { 
+    color: #66FF00; 
+}
+.retroc64-color-3 {
+    color: #00CCFF;
+}
+
+blockquote {
+    color: #777;
+    background-color: rgba(0,0,0, 0.05);
+    border-left-color: #35cb8c;
+    border-left-style: solid;
+    border-left-width: 5px;
+    padding-left: 10px;
+}
+
+*:focus {
+    outline: 0 !important;
+}
+
+button.copy-to-clipboard-button > span {
+    @extend .bi;
+    @extend .bi-copy;
+}
+
+button.copy-to-clipboard-button[data-copy-state="copy-success"] > span {
+    @extend .bi-check-lg;
+    color: #28a745;
+}
+
+// data-copy-state="copy"
+
+/**********************************************
+ * alerts (NOTE, TIP, WARNING, CAUTION, IMPORTANT)
+ **********************************************/
+
+@mixin lunet-alert-icon {
+    @extend .bi;
+    font-size: 1.3em;
+    padding-right: 0.5rem;
+    width: 1.4em;    
+}
+
+@mixin lunet-alert {
+    @extend .alert;
+    border-radius: .5em;
+}
+
+@mixin lunet-alert-heading-text {
+    font-weight: bold;
+    text-transform: uppercase;
+    content: "Information";
+}
+
+.lunet-alert-note-icon {
+    @include lunet-alert-icon;
+    @extend .bi-info-circle;
+}
+
+.lunet-alert-note {
+    @include lunet-alert;
+    @extend .alert-info;
+}
+
+.lunet-alert-note-heading-text::before {
+    @include lunet-alert-heading-text;
+    content: "Note";
+}
+
+.lunet-alert-tip-icon {
+    @include lunet-alert-icon;
+    @extend .bi-lightbulb-off;
+}
+
+.lunet-alert-tip {
+    @include lunet-alert;
+    @extend .alert-success;
+}
+
+.lunet-alert-tip-heading-text::before {
+    @include lunet-alert-heading-text;
+    content: "Tip";
+}
+
+.lunet-alert-warning-icon {
+    @include lunet-alert-icon;
+    @extend .bi-exclamation-triangle;
+}
+
+.lunet-alert-warning {
+    @include lunet-alert;
+    @extend .alert-warning;
+}
+
+.lunet-alert-warning-heading-text::before {
+    @include lunet-alert-heading-text;
+    content: "Warning";
+}
+
+.lunet-alert-caution-icon, .lunet-alert-important-icon {
+    @include lunet-alert-icon;
+    @extend .bi-x-octagon;
+}
+
+.lunet-alert-caution, .lunet-alert-important {
+    @include lunet-alert;
+    @extend .alert-danger;
+}
+
+.lunet-alert-caution-heading-text::before {
+    @include lunet-alert-heading-text;
+    content: "Caution";
+}
+
+.lunet-alert-important-heading-text::before {
+    @include lunet-alert-heading-text;
+    content: "Important";
+}
+
+.lunet-alert-callout-icon {
+    @include lunet-alert-icon;
+    @extend .bi-megaphone;
+}
+
+.lunet-alert-callout {
+    @include lunet-alert;
+    @extend .alert-success;
+    @extend .alert-dismissible;
+}
+
+.lunet-alert-callout-heading-text::before {
+    @include lunet-alert-heading-text;
+    content: "Announcement";
+}
+
+/**********************************************
+ * search bar
+ **********************************************/
+/* Bootstrap 5-powered search dropdown */
+.retroc64-search .dropdown-menu {
+    max-height: 50vh;
+    overflow-y: auto;
+    z-index: 1055; /* above sticky navbar (1020) */
+}
+
+/**********************************************
+ * frontpage
+ **********************************************/
+.retroc64-home, .retroc64-docs {
+    font-size: 1.25rem;
+}
+
+.retroc64-home h3 > i {
+    font-size: 1.3em;
+    margin-right: 1rem;
+}
+
+.retroc64-home h3 i.bi {
+    text-shadow: 1px 1px 3px #444444;
+}
+
+.img-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 0.8rem;
+    border-radius: 0.6rem!important;
+    width: 332px;
+}
+
+.jumbotron {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: transparent url("/img/retroc64-banner.jpg") 50% 50% no-repeat;
+    color: white;
+    text-shadow: 4px 4px 3px #111111;
+}
+
+/**********************************************
+ * top navigation bar
+ **********************************************/
+#retroc64 .navbar .navbar-nav a {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+#retroc64 .btn-info {
+    color: white;
+}
+
+#retroc64 .btn-success {
+    color: white;
+}
+
+#retroc64 .btn-outline-secondary {
+    border-color: #6c757d;
+}
+
+#retroc64 .btn-outline-secondary:hover {
+    color: white;
+}
+
+#retroc64 .btn-outline-secondary:hover {
+    color: white;
+}
+
+#retroc64 .btn-secondary {
+    color: white;
+}
+
+#retroc64 .navbar .navbar-nav li {
+    margin-right: 10px;
+}
+
+
+#retroc64 .navbar a {
+    text-decoration: none;
+}
+
+#retroc64 li.nav-item.active a.nav-link {
+    // use text-shadow instead of font-weight to avoid resize of container and shift of the following menu items
+    //text-shadow: 0px 0px 1px $body-color-bold-shadow;
+    border-bottom-color: red;
+    border-bottom-style: solid;  
+}
+
+#retroc64 .navbar-right .btn .bi {
+    padding: 0.25rem;
+}
+
+.bi-heart {
+    color: #ea4aaa;
+}
+
+#retroc64 .navbar {
+    margin-bottom: 0.5rem;
+    background-color: var(--bs-body-bg);
+}
+
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/**********************************************
+ * menu in documentation
+ **********************************************/
+.retroc64-docs ol.menu {    
+    list-style: none;
+    padding-inline-start: 0px;
+}
+
+.retroc64-docs span.menu-item-row {
+    display: inline-block;
+    width: 100%;
+    padding-left: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.retroc64-docs a.menu-link {
+    display: inline-block;
+    width: 100%;
+    position: relative
+}
+
+.retroc64-docs a.menu-link-show {
+    display: inline-block;
+    position: absolute;
+    right: 30px;    
+}
+
+.retroc64-docs span.menu-item-row:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+.retroc64-docs li.menu-item.active {
+    border-left-color: red;
+    border-left-style: solid;
+    border-left-width: 2px;
+}
+
+.retroc64-docs li.menu-item.active > span {
+    display: inline-block;
+    width: 100%;
+    background-color: rgba(0,0,0,0.05);
+    font-weight: bold;
+}
+
+.retroc64-docs a.menu-link-show::before {
+    content: '\276F';
+    display: inline-block;
+    transform: translateY(3px) rotate(90deg);
+    transition: transform 0.2s;
+}
+
+.retroc64-docs a.menu-link-show.collapsed::before {
+    display: inline-block;
+    content: '\276F';
+    transform: translateY(2px) rotate(0deg);
+    transition: transform 0.2s;
+}
+
+.retroc64-docs ol.menu ol.menu  {    
+    margin-left: 0.8rem;
+}
+
+.retroc64-docs li.menu-item {    
+    list-style-type: none;
+    padding-inline-start: 0px;
+    border-width: thin;
+    border-color: rgba(0, 0, 0, 0.1);
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;    
+    border-bottom-style: solid;
+}
+
+.retroc64-docs li.menu-item li.menu-item:last-child {
+    border-bottom-style: none;
+}
+
+.retroc64-docs li.menu-item a
+{
+    text-decoration-line: none;
+    text-decoration-style: none;
+}
+
+.retroc64-docs footer {
+    padding-bottom: 75vh;
+}
+
+.menu-level1, .menu-level2, .menu-level3, .menu-level4 {
+    font-size: 0.95em;
+}
+
+/**********************************************
+ * toc in documentation
+ **********************************************/
+.retroc64-docs .toc-link::before {
+    width: 0px;
+}
+
+.menu-sidebar {
+    top: $retroc64-top-offset; 
+    z-index: 0;
+}
+
+.retroc64-docs .toc-link {
+    border-right-width: 2px;
+    //border-right-color: #EEE;
+    border-right-style: solid;
+    font-size: 0.9rem;
+}
+
+.retroc64-docs .menu a.toc-link {
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+}
+
+.retroc64-docs a.toc-link:hover {
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+}
+
+.retroc64-docs a.toc-link {
+    display: inline-block;
+    width: 100%;
+}
+
+.retroc64-docs a.toc-link.is-active-link {
+    border-right-color: #00CCFF;
+}
+
+.retroc64-docs .toc-title {
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    padding-inline-start: 0.5rem;    
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.retroc64-docs .toc{
+    padding-right: 3px;
+}
+
+.retroc64-docs ::-webkit-scrollbar {
+    padding-left: 2px;
+    width: 8px;
+    background-color: $search-bg;
+}
+
+.retroc64-docs ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-color: rgba(0, 0, 0, 0.4);
+    border-style: solid;
+    border-width: thin;
+}
+
+.retroc64-docs ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.retroc64-docs .js-toc {
+    max-height: 50vh;
+}
+
+/* Remove sticky on mobile */
+@media screen and (max-width: 768px) {
+    .sticky-top {
+        position: relative !important;
+    }
+
+    .select2-results__option {
+        width: auto;
+    }
+
+    pre.language-retroc64 {
+        font-size: 0.75rem;
+    }
+
+    .menu-sidebar {
+        top: auto!important; 
+    }
+}

@@ -121,7 +121,6 @@ button.copy-to-clipboard-button[data-copy-state="copy-success"] > span {
 
 @mixin lunet-alert-heading-text {
     font-weight: bold;
-    text-transform: uppercase;
     content: "Information";
 }
 
@@ -142,7 +141,7 @@ button.copy-to-clipboard-button[data-copy-state="copy-success"] > span {
 
 .lunet-alert-tip-icon {
     @include lunet-alert-icon;
-    @extend .bi-lightbulb-off;
+    @extend .bi-lightbulb;
 }
 
 .lunet-alert-tip {
@@ -170,12 +169,22 @@ button.copy-to-clipboard-button[data-copy-state="copy-success"] > span {
     content: "Warning";
 }
 
-.lunet-alert-caution-icon, .lunet-alert-important-icon {
+.lunet-alert-important-icon {
     @include lunet-alert-icon;
-    @extend .bi-x-octagon;
+    @extend .bi-flag;
 }
 
-.lunet-alert-caution, .lunet-alert-important {
+.lunet-alert-caution-icon {
+    @include lunet-alert-icon;
+    @extend .bi-exclamation-triangle;
+}
+
+.lunet-alert-important {
+    @include lunet-alert;
+    @extend .alert-primary;
+}
+
+.lunet-alert-caution {
     @include lunet-alert;
     @extend .alert-danger;
 }

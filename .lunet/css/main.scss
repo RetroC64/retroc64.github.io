@@ -101,7 +101,10 @@ button.copy-to-clipboard-button[data-copy-state="copy-success"] > span {
     color: #28a745;
 }
 
-// data-copy-state="copy"
+button.copy-to-clipboard-button[data-copy-state="copy-error"] > span {
+    @extend .bi-x-lg;
+    color: #dc3545;
+}
 
 /**********************************************
  * alerts (NOTE, TIP, WARNING, CAUTION, IMPORTANT)

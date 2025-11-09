@@ -1,7 +1,7 @@
 ---
 layout: _default
 ---
-  <div id="retroc64" class="container" data-prismjs-copy="" data-prismjs-copy-success="">
+  <div id="retroc64" class="container" data-prismjs-copy="" data-prismjs-copy-success="" data-prismjs-copy-timeout="1200">
       <nav class="navbar navbar-expand-md navbar-light sticky-top">
         <a class="retroc64-logo navbar-brand" href="/"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

@@ -2,19 +2,53 @@
 // Ensure copy-to-clipboard buttons get Bootstrap tooltips
 document.addEventListener('DOMContentLoaded', () => {
   const copyBtns = document.querySelectorAll('button.copy-to-clipboard-button');
-  const toInit = [];
 
   copyBtns.forEach(btn => {
-    if (!btn.hasAttribute('data-bs-toggle')) {
-      btn.setAttribute('data-bs-toggle', 'tooltip');
-      btn.setAttribute('data-bs-placement', 'left');
-      btn.setAttribute('data-bs-title', 'Copy to Clipboard.');
-      toInit.push(btn);
-    }
-  });
+    // Ensure tooltip attributes exist
+    if (!btn.hasAttribute('data-bs-toggle')) btn.setAttribute('data-bs-toggle', 'tooltip');
+    if (!btn.hasAttribute('data-bs-placement')) btn.setAttribute('data-bs-placement', 'left');
+    if (!btn.hasAttribute('data-bs-title')) btn.setAttribute('data-bs-title', 'Copy to Clipboard.');
 
-  // Initialize tooltips for the buttons we just configured
-  toInit.forEach(el => new bootstrap.Tooltip(el));
+    const tt = bootstrap.Tooltip.getOrCreateInstance(btn);
+    const original = btn.getAttribute('data-bs-title') || 'Copy to Clipboard.';
+
+    // Hide tooltip on click (if visible from hover)
+    //btn.addEventListener('click', () => tt.hide());
+
+    // React to Prism's data-copy-state changes
+    const obs = new MutationObserver(muts => {
+      for (const m of muts) {
+        if (m.type === 'attributes' && m.attributeName === 'data-copy-state') {
+          const state = btn.getAttribute('data-copy-state');
+
+          if (state === 'copy-success') {
+            if (typeof tt.setContent === 'function') tt.setContent({ '.tooltip-inner': 'Copied!' });
+            else btn.setAttribute('data-bs-title', 'Copied!');
+            tt.show();
+            // Drop focus so the button doesn’t stay highlighted
+            btn.blur();            
+            setTimeout(() => {
+              if (typeof tt.setContent === 'function') tt.setContent({ '.tooltip-inner': original });
+              else btn.setAttribute('data-bs-title', original);
+              tt.hide();
+            }, 1200);
+          } else if (state === 'copy-error') {
+            if (typeof tt.setContent === 'function') tt.setContent({ '.tooltip-inner': 'Failed to copy!' });
+            else btn.setAttribute('data-bs-title', 'Failed to copy!');
+            tt.show();
+            // Drop focus so the button doesn’t stay highlighted
+            btn.blur();            
+            setTimeout(() => {
+              if (typeof tt.setContent === 'function') tt.setContent({ '.tooltip-inner': original });
+              else btn.setAttribute('data-bs-title', original);
+              tt.hide();
+            }, 1500);
+          }
+        }
+      }
+    });
+    obs.observe(btn, { attributes: true, attributeFilter: ['data-copy-state'] });
+  });
 });
 
 // Initialize bootstrap tooltips

@@ -11,7 +11,7 @@ $primary: #138496;
 $breadcrumb-bg: $body-bg;
 */
 
-$retroc64-top-offset: 74px;
+$retroc64-top-offset: 120px;
 $font-size-base: 1.25rem;
 $font-family-base: Figtree, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
  
@@ -23,6 +23,8 @@ $bootstrap-icons-font-dir: "/fonts";
 :root {
     --bs-body-bg-rgb: 31, 30, 50;
     --bs-body-bg: rgb(31, 30, 50);
+    --bs-body-color-darker-20: hsl(from var(--bs-body-color) h s calc(l - 20));
+    --bs-body-color-darker-10: hsl(from var(--bs-body-color) h s calc(l - 10));
 }
 
 @font-face {
@@ -266,29 +268,29 @@ button.copy-to-clipboard-button[data-copy-state="copy-error"] > span {
     padding-bottom: 4px;
 }
 
-#retroc64 .btn-info {
-    color: white;
-}
+// #retroc64 .btn-info {
+//     color: white;
+// }
 
-#retroc64 .btn-success {
-    color: white;
-}
+// #retroc64 .btn-success {
+//     color: white;
+// }
 
-#retroc64 .btn-outline-secondary {
-    border-color: #6c757d;
-}
+// #retroc64 .btn-outline-secondary {
+//     border-color: #6c757d;
+// }
 
-#retroc64 .btn-outline-secondary:hover {
-    color: white;
-}
+// #retroc64 .btn-outline-secondary:hover {
+//     color: white;
+// }
 
-#retroc64 .btn-outline-secondary:hover {
-    color: white;
-}
+// #retroc64 .btn-outline-secondary:hover {
+//     color: white;
+// }
 
-#retroc64 .btn-secondary {
-    color: white;
-}
+// #retroc64 .btn-secondary {
+//     color: white;
+// }
 
 #retroc64 .navbar .navbar-nav li {
     margin-right: 10px;
@@ -329,20 +331,20 @@ footer {
  **********************************************/
 .retroc64-docs ol.menu {    
     list-style: none;
-    padding-inline-start: 0px;
+    padding-inline-start: 0px;    
 }
 
 .retroc64-docs span.menu-item-row {
     display: inline-block;
     width: 100%;
-    padding-left: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.8rem;
 }
 
 .retroc64-docs a.menu-link {
     display: inline-block;
     width: 100%;
-    position: relative
+    position: relative;
+    color: var(--bs-body-color-darker-10);    
 }
 
 .retroc64-docs a.menu-link-show {
@@ -352,20 +354,24 @@ footer {
 }
 
 .retroc64-docs span.menu-item-row:hover {
-    background-color: rgba(0,0,0,0.05);
+    //background-color: rgba(0,0,0,0.05);    
 }
 
 .retroc64-docs li.menu-item.active {
-    border-left-color: red;
-    border-left-style: solid;
-    border-left-width: 2px;
+    // border-left-color: red;
+    // border-left-style: solid;
+    // border-left-width: 2px;
 }
 
-.retroc64-docs li.menu-item.active > span {
+.retroc64-docs li.menu-item > span > a.menu-link:hover {
+    color: var(--bs-body-color);
+}
+
+.retroc64-docs li.menu-item.active > span > a.menu-link {
     display: inline-block;
     width: 100%;
-    background-color: rgba(0,0,0,0.05);
-    font-weight: bold;
+    font-weight: 600;    
+    color: var(--bs-link-color);
 }
 
 .retroc64-docs a.menu-link-show::before {
@@ -403,8 +409,7 @@ footer {
 
 .retroc64-docs li.menu-item a
 {
-    text-decoration-line: none;
-    text-decoration-style: none;
+    text-decoration-line: none;    
 }
 
 .retroc64-docs footer {
@@ -428,20 +433,20 @@ footer {
 }
 
 .retroc64-docs .toc-link {
-    border-right-width: 2px;
-    //border-right-color: #EEE;
-    border-right-style: solid;
-    font-size: 0.9rem;
+    padding-bottom: 0.1em;
 }
 
 .retroc64-docs .menu a.toc-link {
-    text-decoration-line: underline;
-    text-decoration-style: dotted;
+    //text-decoration-line: underline;
+    //text-decoration-style: dotted;
+    color: var(--bs-body-color-darker-20);
+    //color: var(--bs-body-color);
 }
 
 .retroc64-docs a.toc-link:hover {
     text-decoration-line: underline;
     text-decoration-style: solid;
+    color: var(--bs-body-color-darker-10);
 }
 
 .retroc64-docs a.toc-link {
@@ -450,18 +455,18 @@ footer {
 }
 
 .retroc64-docs a.toc-link.is-active-link {
-    border-right-color: #00CCFF;
+    //border-right-color: #00CCFF;
 }
 
 .retroc64-docs .toc-title {
-    border-bottom-style: solid;
-    border-bottom-width: thin;
+    //border-bottom-style: solid;
+    //border-bottom-width: thin;
     padding-inline-start: 0.5rem;    
-    border-bottom-color: rgba(0, 0, 0, 0.1);
+    //border-bottom-color: rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-.retroc64-docs .toc{
+.retroc64-docs .toc {
     padding-right: 3px;
 }
 
@@ -484,6 +489,11 @@ footer {
 
 .retroc64-docs .js-toc {
     max-height: 50vh;
+    border-left-width: 1px;
+    border-left-color: #333;
+    border-left-style: solid;
+    //padding-left: 0.5rem;
+    font-size: 1.05rem;    
 }
 
 /* Remove sticky on mobile */

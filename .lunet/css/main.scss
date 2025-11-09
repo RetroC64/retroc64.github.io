@@ -13,6 +13,7 @@ $breadcrumb-bg: $body-bg;
 
 $retroc64-top-offset: 120px;
 $font-size-base: 1.25rem;
+$primary: rgb(170, 125, 225);
 $font-family-base: Figtree, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
  
 $bootstrap-icons-font-dir: "/fonts";
@@ -25,6 +26,11 @@ $bootstrap-icons-font-dir: "/fonts";
     --bs-body-bg: rgb(31, 30, 50);
     --bs-body-color-darker-20: hsl(from var(--bs-body-color) h s calc(l - 20));
     --bs-body-color-darker-10: hsl(from var(--bs-body-color) h s calc(l - 10));
+    --color-c64-red: #F80001;
+    --color-c64-orange: #FB6A01;
+    --color-c64-yellow: #ECE304;
+    --color-c64-green: #4CAB27;
+    --color-c64-blue: #3966AD;
 }
 
 @font-face {
@@ -106,6 +112,48 @@ button.copy-to-clipboard-button[data-copy-state="copy-success"] > span {
 button.copy-to-clipboard-button[data-copy-state="copy-error"] > span {
     @extend .bi-x-lg;
     color: #dc3545;
+}
+
+.c64-text {
+    background-image: linear-gradient(to right, var(--color-c64-red), var(--color-c64-orange), var(--color-c64-yellow), var(--color-c64-green), var(--color-c64-blue));
+    background-clip: text;
+    color: transparent;    
+}
+
+.c64-number {
+    color: black; 
+    text-shadow:
+        0 0 2px rgba(255,255,255,0.9),
+        0 0 6px rgba(255,255,255,0.8),
+        0 0 12px rgba(255,255,255,0.7),
+        0 0 18px rgba(255,255,255,0.6);
+}
+
+.hero-text span.c64-number, .hero-text span.c64-text {
+    font-size: 1.5em;
+}
+
+/* Round the video container and clip overflow */
+.c64-video-wrap {
+    position: relative;
+    z-index: 0; // ensure the wrapper forms a stacking context
+}
+
+.c64-video-wrap::before {
+    content: "";
+    position: absolute;    
+    inset: -2rem -3rem -30rem -3rem;                 // glow outside the video bounds
+    background-image: linear-gradient(0deg, transparent 33%, rgb(74, 21, 68), rgb(59, 33, 86), rgb(45, 37, 101), rgb(26, 43, 107));
+    filter: blur(5rem);
+    z-index: -1;                  // behind the video
+    pointer-events: none;
+}
+
+.c64-video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;            // fill the frame without distortion
 }
 
 /**********************************************
@@ -226,6 +274,7 @@ button.copy-to-clipboard-button[data-copy-state="copy-error"] > span {
 /* Bootstrap 5-powered search dropdown */
 .retroc64-search .dropdown-menu {
     max-height: 50vh;
+    overflow-x: hidden;
     overflow-y: auto;
     z-index: 1055; /* above sticky navbar (1020) */
 }

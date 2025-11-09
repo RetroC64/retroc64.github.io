@@ -19,7 +19,7 @@ layout: _default
                   <div class="input-group">
                     <span class="input-group-text"><i class="bi bi-search"></i></span>
                     <input id="search-input" type="search" class="form-control" placeholder="Search... (Alt+s)" aria-label="Search" aria-expanded="false" aria-controls="search-results" data-bs-toggle="dropdown" data-bs-auto-close="outside">
-                    <ul id="search-results" class="dropdown-menu w-100 p-0 overflow-auto" style="max-height: 50vh;" role="listbox" aria-labelledby="search-input"></ul>
+                    <ul id="search-results" class="dropdown-menu w-100 p-0" style="max-height: 50vh;" role="listbox" aria-labelledby="search-input"></ul>
                   </div>
                 </div>
             </li>

@@ -18,8 +18,7 @@ with search
     enable = true
     # engine = "lunr"    
     # worker = true
-    # Exclude this file manually here as it not public and doesn't have a frontmatter
-    excludes.add ["/test.html", "/404.md"]
+    excludes.add ["/404.md"]
 end
 
 with cards.twitter

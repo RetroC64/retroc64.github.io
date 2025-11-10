@@ -5,5 +5,6 @@ doc:
   - {path: music.md}
   - {path: helpers.md}
   - {path: debugging.md}
+  - {path: slides.md}
 #  - {path: projects.md}
 #  - {path: about/readme.md, folder: true, list_item_class: ms-auto }

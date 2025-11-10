@@ -143,7 +143,11 @@ button.copy-to-clipboard-button[data-copy-state="copy-error"] > span {
     content: "";
     position: absolute;    
     inset: -2rem -3rem -30rem -3rem;                 // glow outside the video bounds
-    background-image: linear-gradient(0deg, transparent 33%, rgb(74, 21, 68), rgb(59, 33, 86), rgb(45, 37, 101), rgb(26, 43, 107));
+    background-image: linear-gradient(0deg, transparent 33%, 
+    rgb(74, 21, 68), 
+    rgb(59, 33, 86), 
+    rgb(45, 37, 101), 
+    rgb(26, 43, 107));
     filter: blur(5rem);
     z-index: -1;                  // behind the video
     pointer-events: none;
@@ -155,6 +159,13 @@ button.copy-to-clipboard-button[data-copy-state="copy-error"] > span {
     height: 100%;
     object-fit: cover;            // fill the frame without distortion
 }
+
+.card-header {
+  font-size: calc(1.325rem + .9vw);
+  font-weight: 500;
+  line-height: 1.2;    
+}
+
 
 /**********************************************
  * alerts (NOTE, TIP, WARNING, CAUTION, IMPORTANT)

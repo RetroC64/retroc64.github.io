@@ -46,7 +46,7 @@ with bundle
     css tocbot "/dist/tocbot.css"
     # css pico "/css/pico.min.css"
     css "/css/prism.css"
-    css bootstrap_icons "/font/bootstrap-icons.min.css  "
+    css bootstrap_icons "/font/bootstrap-icons.min.css"
     css "/css/main.scss"
 
     # js files
@@ -59,7 +59,7 @@ with bundle
     js prismjs "/components/prism-c.min.js"
     js prismjs "/components/prism-cpp.min.js"
     js prismjs "/components/prism-csharp.min.js"
-    js prismjs "/components/prism-nasm.min.js"
+    js prismjs "/components/prism-asm6502.min.js"    
     js prismjs "/plugins/toolbar/prism-toolbar.min.js"
     js prismjs "/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"
     #js mermaid "/dist/mermaid.min.js"

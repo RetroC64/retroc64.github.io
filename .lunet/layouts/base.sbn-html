@@ -1,10 +1,23 @@
 ---
 layout: _default
 ---
-  <div id="retroc64" class="container" data-prismjs-copy="" data-prismjs-copy-success="" data-prismjs-copy-timeout="1200">
-      <nav class="navbar navbar-expand-md navbar-light sticky-top">
+{{~  
+  path0 = (page.url | string.downcase | string.split '/')[0] ?? "home" ## first part of the url ## 
+  case path0 
+    when 'home', 'docs'
+      pathclass = 'retroc64-' + path0
+    else
+      pathclass = 'retroc64-404'
+  end
+~}}
+    <div id="retroc64" class="container">
+      <nav class="navbar navbar-expand-md navbar-light {{ path0 == "home" ? "" : "sticky-top" }}">
         <a class="retroc64-logo navbar-brand" href="/"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div id="navbarSupportedContent" class="collapse navbar-collapse justify-content-between">
@@ -32,17 +45,8 @@ layout: _default
           ~}}
         </div>
       </nav>
-{{~  
-  path0 = (page.url | string.downcase | string.split '/')[0] ?? "home" ## first part of the url ## 
-  case path0 
-    when 'home', 'docs'
-      pathclass = 'retroc64-' + path0
-    else
-      pathclass = 'retroc64-404'
-  end
-~}}
       <div class="{{ pathclass }}">
-        <section>
+        <section data-prismjs-copy="" data-prismjs-copy-success="" data-prismjs-copy-timeout="1200">
 {{ content }}
         </section>
         <footer>

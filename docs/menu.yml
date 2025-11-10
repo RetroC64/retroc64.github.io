@@ -1,5 +1,9 @@
 doc:
-  - {path: readme.md, title: Introduction}
+  - {path: readme.md, title: ✨ Getting Started}
   - {path: assembler.md}
+  - {path: graphics.md}
+  - {path: music.md}
+  - {path: helpers.md}
+  - {path: debugging.md}
 #  - {path: projects.md}
 #  - {path: about/readme.md, folder: true, list_item_class: ms-auto }

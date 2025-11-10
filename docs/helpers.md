@@ -1,5 +1,5 @@
 ---
-title: 🖥️ Assembler
+title: 🧪 Helpers
 ---
 
 this is the assembler with 6502 instructions example.

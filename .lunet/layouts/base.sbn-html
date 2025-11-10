@@ -12,7 +12,10 @@ layout: _default
 ~}}
     <div id="retroc64" class="container">
       <nav class="navbar navbar-expand-md navbar-light {{ path0 == "home" ? "" : "sticky-top" }}">
-        <a class="retroc64-logo navbar-brand" href="/"></a>
+        <a class="navbar-brand" href="/">
+          <img class="retroc64-logo" src="/img/retroc64-logo.png" alt="" width="96" height="96">
+          <span class="visually-hidden">Home</span>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
@@ -31,7 +34,7 @@ layout: _default
                 <div class="retroc64-search dropdown w-100">
                   <div class="input-group">
                     <span class="input-group-text"><i class="bi bi-search"></i></span>
-                    <input id="search-input" type="search" class="form-control" placeholder="Search... (Alt+s)" aria-label="Search" aria-expanded="false" aria-controls="search-results" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                    <input id="search-input" type="search" class="form-control" placeholder="Search... (Alt+s)" aria-label="Search" aria-controls="search-results" data-bs-toggle="dropdown" data-bs-auto-close="outside">
                     <ul id="search-results" class="dropdown-menu w-100 p-0" style="max-height: 50vh;" role="listbox" aria-labelledby="search-input"></ul>
                   </div>
                 </div>

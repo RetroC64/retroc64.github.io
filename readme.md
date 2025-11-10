@@ -6,7 +6,7 @@ title_html: Welcome to RetroC64!
 
 <section class="text-center py-5 text-white hero-text">
   <div class="container">
-    <h1 class="fw-bold display-5">
+    <h1 class="fw-bold display-6">
        Programming the <span class="c64-text">Commodore</span> <span class="c64-number">64</span><br>
       with <span class="text-primary">.NET</span>
     </h1>
@@ -16,7 +16,7 @@ title_html: Welcome to RetroC64!
     </p>
     <div class="d-flex justify-content-center gap-3 mt-4">
       <a href="/docs" class="btn btn-primary btn-lg">Get Started ></a>
-      <a href="#" class="btn btn-light btn-lg">Examples ></a>
+      <a href="https://github.com/RetroC64/RetroC64-Examples" class="btn btn-light btn-lg">Examples ></a>
     </div>
   </div>
 </section>
@@ -36,7 +36,7 @@ title_html: Welcome to RetroC64!
   <div class="row row-cols-1 row-cols-md-2 gx-5 gy-5">
     <div class="col">
         <div class="card">
-        <div class="card-header">
+        <div class="card-header display-6">
             🚀 Zero Friction Dev Loop
         </div>
         <div class="card-body">
@@ -47,7 +47,7 @@ title_html: Welcome to RetroC64!
     </div>
     <div class="col">
         <div class="card">
-        <div class="card-header">
+        <div class="card-header display-6">
             🖥️ Fluent Assembler
         </div>
         <div class="card-body">
@@ -57,7 +57,7 @@ title_html: Welcome to RetroC64!
         </div>    </div>
     <div class="col">
         <div class="card">
-        <div class="card-header">
+        <div class="card-header display-6">
             🎨 Sprite Tooling
         </div>
         <div class="card-body">
@@ -67,7 +67,7 @@ title_html: Welcome to RetroC64!
         </div>    </div>
     <div class="col">
         <div class="card">
-        <div class="card-header">
+        <div class="card-header display-6">
             🎵 SID Tooling
         </div>
         <div class="card-body">
@@ -78,7 +78,7 @@ title_html: Welcome to RetroC64!
     </div>
     <div class="col">
         <div class="card">
-        <div class="card-header">
+        <div class="card-header display-6">
             🧪 Core Helpers
         </div>
         <div class="card-body">
@@ -88,7 +88,7 @@ title_html: Welcome to RetroC64!
         </div>    </div>
     <div class="col">
         <div class="card">
-        <div class="card-header">
+        <div class="card-header display-6">
             🐞 Debugging
         </div>
         <div class="card-body">

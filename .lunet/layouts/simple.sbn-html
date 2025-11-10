@@ -2,7 +2,5 @@
 layout: base
 ---
 <div class="container">
-    <div class="entry-content">
 {{ content }}
-    </div>
 </div>

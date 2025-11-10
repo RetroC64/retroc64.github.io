@@ -3,7 +3,5 @@ home:
   - {path: docs/readme.md, folder: true}
 
 home2:
-  - {url: "https://github.com/sponsors/xoofx", title: '<i class="bi bi-heart"></i> Sponsor', link_class: btn btn-outline-secondary, pre:  }
+  - {url: "https://github.com/sponsors/xoofx", title: '<i class="bi bi-heart"></i> Sponsor', link_class: btn btn-outline-secondary, }
   - {url: "https://github.com/RetroC64/RetroC64/", title: '<i class="bi bi-github"></i> GitHub', link_class: btn btn-info}  
-#  - {path: projects.md}
-#  - {path: about/readme.md, folder: true, list_item_class: ms-auto }

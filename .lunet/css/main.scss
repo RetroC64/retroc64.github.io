@@ -2,7 +2,7 @@
  * general
  **********************************************/
 
-$retroc64-top-offset: 120px;
+$retroc64-top-offset: 120.5px;
 $font-size-base: 1.25rem;
 $font-family-base: Figtree, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
  
@@ -35,10 +35,20 @@ $bootstrap-icons-font-dir: "/fonts";
 $search-bg: lighten($body-bg, 5%);
 
 .retroc64-logo {
-    background: transparent url("/img/retroc64-logo.png") no-repeat scroll center/contain;
     display: block;
-    width: 96px;
-    height: 96px;    
+    width: auto;
+    height: 96px;
+}
+
+// Show focus only for keyboard users
+#retroc64 .navbar-brand:focus {
+    outline: none;
+}
+
+#retroc64 .navbar-brand:focus-visible {
+    outline: 2px dotted var(--bs-link-color);
+    outline-offset: 4px;
+    border-radius: 4px;
 }
 
 body {
@@ -148,12 +158,6 @@ button.copy-to-clipboard-button[data-copy-state="copy-error"] > span {
     width: 100%;
     height: 100%;
     object-fit: cover;            // fill the frame without distortion
-}
-
-.card-header {
-  font-size: calc(1.325rem + .9vw);
-  font-weight: 500;
-  line-height: 1.2;    
 }
 
 .carousel-caption {
@@ -318,7 +322,7 @@ button.copy-to-clipboard-button[data-copy-state="copy-error"] > span {
  **********************************************/
 #retroc64 .navbar .navbar-nav a {
     padding-top: 4px;
-    padding-bottom: 4px;
+    //padding-bottom: 4px;
 }
 
 // #retroc64 .btn-info {
@@ -370,7 +374,6 @@ button.copy-to-clipboard-button[data-copy-state="copy-error"] > span {
 }
 
 #retroc64 .navbar {
-    margin-bottom: 0.5rem;
     background-color: var(--bs-body-bg);
 }
 

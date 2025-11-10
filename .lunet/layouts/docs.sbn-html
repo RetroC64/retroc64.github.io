@@ -18,7 +18,7 @@ layout: base
           aria-controls="docsSidebar"
           aria-expanded="false"
           aria-label="Toggle docs menu">
-          Menu
+          Table of Contents
         </button>
         
         <h1>{{ page.title }}</h1>

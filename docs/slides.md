@@ -17,19 +17,19 @@ In this page, you can find the slides from my talk "Retro Meets Modern: Commodor
         aria-current="{{ i == 1 ? "true" : ""}}"
         aria-label="Slide {{ i }}">
     </button>
-    {{ end; i = 1; }}
+    {{ end; }}
   </div>
   <div class="carousel-inner">
 
 <div class="carousel-item active">
-<img src="/slides/retroc64_slide{{ i }}.jpg" class="d-block w-100" alt="RetroC64 Slide {{ i++ }}">
+<img src="/slides/retroc64_slide1.jpg" class="d-block w-100" alt="RetroC64 Slide 1">
 <div class="d-none slide-caption-source">
 
 Today we'll time-travel from the 1980s 8-bit world … straight into .NET 9.
 
 <br></div></div>
 <div class="carousel-item">
-<img src="/slides/retroc64_slide{{ i }}.jpg" class="d-block w-100" alt="RetroC64 Slide {{ i++ }}">
+<img src="/slides/retroc64_slide2.jpg" class="d-block w-100" alt="RetroC64 Slide 2">
 <div class="d-none slide-caption-source">
 
 My name is Alexandre Mutel - VP of Engineering at DataGalaxy. In my spare time, I love contributing to open-source projects in the .NET ecosystem. Some of them became popular… But most are pretty niche, but I like them.
@@ -37,7 +37,7 @@ And above all, I'm a .NET performance enthusiast.
 
 <br></div></div>
 <div class="carousel-item">
-<img src="/slides/retroc64_slide{{ i }}.jpg" class="d-block w-100" alt="RetroC64 Slide {{ i++ }}">
+<img src="/slides/retroc64_slide3.jpg" class="d-block w-100" alt="RetroC64 Slide 3">
 <div class="d-none slide-caption-source">
 
 So today, I'm going to talk about this project,
@@ -48,7 +48,7 @@ And if time allows, I'll wrap up with a look at the architecture and what's comi
 
 <br></div></div>
 <div class="carousel-item">
-<img src="/slides/retroc64_slide{{ i }}.jpg" class="d-block w-100" alt="RetroC64 Slide {{ i++ }}">
+<img src="/slides/retroc64_slide4.jpg" class="d-block w-100" alt="RetroC64 Slide 4">
 <div class="d-none slide-caption-source">
 
 The very first computer I ever touched was a Texas Instruments TI-99/4A.
@@ -58,7 +58,7 @@ and then... my beloved Amiga 500.
 
 <br></div></div>
 <div class="carousel-item">
-<img src="/slides/retroc64_slide{{ i }}.jpg" class="d-block w-100" alt="RetroC64 Slide {{ i++ }}">
+<img src="/slides/retroc64_slide5.jpg" class="d-block w-100" alt="RetroC64 Slide 5">
 <div class="d-none slide-caption-source">
 
 One of the magical things about the 8-bit era
@@ -70,7 +70,7 @@ It was a pure moment of creativity - and I loved doing both.
 
 <br></div></div>
 <div class="carousel-item">
-<img src="/slides/retroc64_slide{{ i }}.jpg" class="d-block w-100" alt="RetroC64 Slide {{ i++ }}">
+<img src="/slides/retroc64_slide6.jpg" class="d-block w-100" alt="RetroC64 Slide 6">
 <div class="d-none slide-caption-source">
 
 Back then, there were so many different 8-bit machines
@@ -79,7 +79,7 @@ So why did I choose the Commodore 64 for this experiment?
 
 <br></div></div>
 <div class="carousel-item">
-<img src="/slides/retroc64_slide{{ i }}.jpg" class="d-block w-100" alt="RetroC64 Slide {{ i++ }}">
+<img src="/slides/retroc64_slide7.jpg" class="d-block w-100" alt="RetroC64 Slide 7">
 <div class="d-none slide-caption-source">
 
 And the reason is simple - the Commodore 64 is actually coming back!
@@ -95,7 +95,7 @@ and see what I could already do with it.
 
 <br></div></div>
 <div class="carousel-item">
-<img src="/slides/retroc64_slide{{ i }}.jpg" class="d-block w-100" alt="RetroC64 Slide {{ i++ }}">
+<img src="/slides/retroc64_slide8.jpg" class="d-block w-100" alt="RetroC64 Slide 8">
 <div class="d-none slide-caption-source">
 
 Let's take a quick look at what's inside the Commodore 64.
@@ -107,7 +107,7 @@ And, of course, the system had a whole 64 kilobytes of RAM and 20 kilobytes of R
 
 <br></div></div>
 <div class="carousel-item">
-<img src="/slides/retroc64_slide{{ i }}.jpg" class="d-block w-100" alt="RetroC64 Slide {{ i++ }}">
+<img src="/slides/retroc64_slide9.jpg" class="d-block w-100" alt="RetroC64 Slide 9">
 <div class="d-none slide-caption-source">
 
 Now let's look at how memory is organized on the Commodore 64.
@@ -135,7 +135,7 @@ you can switch between showing the ROMs or accessing the underlying RAM instead.
 
 <br></div></div>
 <div class="carousel-item">
-<img src="/slides/retroc64_slide{{ i }}.jpg" class="d-block w-100" alt="RetroC64 Slide {{ i++ }}">
+<img src="/slides/retroc64_slide10.jpg" class="d-block w-100" alt="RetroC64 Slide 10">
 <div class="d-none slide-caption-source">
 
 And programming the C64 requires typically
@@ -157,7 +157,7 @@ And I'm also eluding the challenges of debugging…
 
 <br></div></div>
 <div class="carousel-item">
-<img src="/slides/retroc64_slide{{ i }}.jpg" class="d-block w-100" alt="RetroC64 Slide {{ i++ }}">
+<img src="/slides/retroc64_slide11.jpg" class="d-block w-100" alt="RetroC64 Slide 11">
 <div class="d-none slide-caption-source">
 
 That's why I have developed RetroC64, an SDK for modern Commodore 64 development straight from .NET
@@ -177,14 +177,14 @@ First-class VS Code debugging: inspect registers, memory, VIC/SID registers, bre
 And, of course, supporting all OS thanks to .NET 9.0+
 <br></div></div>
 <div class="carousel-item">
-<img src="/slides/retroc64_slide{{ i }}.jpg" class="d-block w-100" alt="RetroC64 Slide {{ i++ }}">
+<img src="/slides/retroc64_slide12.jpg" class="d-block w-100" alt="RetroC64 Slide 12">
 <div class="d-none slide-caption-source">
 
 And now let's experience live this project.
 
 <br></div></div>
 <div class="carousel-item">
-<img src="/slides/retroc64_slide{{ i }}.jpg" class="d-block w-100" alt="RetroC64 Slide {{ i++ }}">
+<img src="/slides/retroc64_slide13.jpg" class="d-block w-100" alt="RetroC64 Slide 13">
 <div class="d-none slide-caption-source">
 
 The SDK is architecture around 4 main packages:
@@ -212,7 +212,7 @@ And finally, Vice package that implements the custom socket binary protocol to c
 
 <br></div></div>
 <div class="carousel-item">
-<img src="/slides/retroc64_slide{{ i }}.jpg" class="d-block w-100" alt="RetroC64 Slide {{ i++ }}">
+<img src="/slides/retroc64_slide14.jpg" class="d-block w-100" alt="RetroC64 Slide 14">
 <div class="d-none slide-caption-source">
 
 I'd like to zoom in on the debugger - because I think it was a really interesting challenge, and I learned a lot from it.
@@ -228,7 +228,7 @@ And honestly, I found it really cool that adding full debugger support in C# to 
 
 <br></div></div>
 <div class="carousel-item">
-<img src="/slides/retroc64_slide{{ i }}.jpg" class="d-block w-100" alt="RetroC64 Slide {{ i++ }}">
+<img src="/slides/retroc64_slide15.jpg" class="d-block w-100" alt="RetroC64 Slide 15">
 <div class="d-none slide-caption-source">
 
 First, the Fast Loader. I've already ported a lot of assembly code... but it's actually not finished yet. I lied again - sorry!
@@ -247,7 +247,7 @@ So yes - there's still plenty of work ahead... and contributors are, of course, 
 
 <br></div></div>
 <div class="carousel-item">
-<img src="/slides/retroc64_slide{{ i }}.jpg" class="d-block w-100" alt="RetroC64 Slide {{ i++ }}">
+<img src="/slides/retroc64_slide16.jpg" class="d-block w-100" alt="RetroC64 Slide 16">
 <div class="d-none slide-caption-source">
 
 Thank you for watching,

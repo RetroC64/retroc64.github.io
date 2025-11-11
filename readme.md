@@ -2,6 +2,7 @@
 layout: simple
 title: Home
 title_html: Welcome to RetroC64!
+og_type: website
 ---
 
 <section class="text-center py-5 text-white hero-text">

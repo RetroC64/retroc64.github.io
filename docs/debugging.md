@@ -58,6 +58,11 @@ You can set code breakpoints by clicking in the gutter of the source code editor
 
 ![RetroC64 Debugger Breakpoints](/img/RetroC64_Debugger_BreakpointCode.png)
 
+In order for the debugger to allow breakpoint on Asm6502 instructions, the Asm6502 assembler stores debug information when the C# code is compiled.
+
+{{TIP do}}
+If you are using a sub function to build your assembly code, by default, only the instructions within this function will have debug information, not the method itself.
+{{end}}
 
 ## Disassembly View
 
@@ -70,11 +75,3 @@ By clicking on the CALL STACK frame entry, you can open the Disassembly view tha
 By clicking on the `PC` register, you can open the Memory view that shows the entire memory of the C64 (64 KiB):
 
 ![RetroC64 Debugger Memory View](/img/RetroC64_Debugger_Memory.png)
-
-## More Information
-
-In order for the debugger to allow breakpoint on Asm6502 instructions, the Asm6502 assembler stores debug information when the C# code is compiled.
-
-{{TIP do}}
-If you are using a sub function to build your assembly code, by default, only the instructions within this function will have debug information, not the method itself.
-{{end}}

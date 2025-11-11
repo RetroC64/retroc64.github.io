@@ -60,6 +60,7 @@ with bundle
     js prismjs "/components/prism-cpp.min.js"
     js prismjs "/components/prism-csharp.min.js"
     js prismjs "/components/prism-asm6502.min.js"    
+    js prismjs "/components/prism-json.min.js"
     js prismjs "/plugins/toolbar/prism-toolbar.min.js"
     js prismjs "/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"
     #js mermaid "/dist/mermaid.min.js"

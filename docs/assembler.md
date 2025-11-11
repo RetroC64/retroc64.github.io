@@ -8,10 +8,8 @@ RetroC64 relies on [Asm6502](https://github.com/xoofx/Asm6502), an assembler spe
 
 It allows to write 6502/6510 assembly code directly from C# by providing a fluent, strongly typed assembler/disassembler. It also provides a cycle-accurate CPU emulator (pluggable 64 KiB memory bus) that is used by the [SID file relocator](/docs/music.md) to analyze the code and relocate it properly.
 
-{{TIP do}}
-
-You can find more information about Asm6502 in its documentation 📚 [here](https://github.com/xoofx/Asm6502/tree/main/doc)
-{{end}}
+> [!TIP]
+> You can find more information about Asm6502 in its documentation 📚 [here](https://github.com/xoofx/Asm6502/tree/main/doc)
 
 This page will focus on how to best use Asm6502 in RetroC64.
 
@@ -147,19 +145,17 @@ asm
     .InfiniteLoop();
 ```
 
-{{IMPORTANT do}}
-Make sure to emit a `CLI` instruction after the initialization if you want to enable interrupts, as the `SEI` instruction in the initialization will block them.
+> [!IMPORTANT]
+> Make sure to emit a `CLI` instruction after the initialization if you want to enable interrupts, as the `SEI` instruction in the initialization will block them.
+> 
+> Usually during the initialization phase, you setup your IRQs, so enabling them right after the initialization is a common practice.
 
-Usually during the initialization phase, you setup your IRQs, so enabling them right after the initialization is a common practice.
-{{end}}
-
-{{NOTE do}}
-In order to access registers, RetroC64 provides a static class [`C64Registers`](https://github.com/RetroC64/RetroC64/blob/main/src/RetroC64.Core/C64Registers.cs) with most of the VIC-II, SID, and CIA registers defined as constants, with enums for bit flags where applicable.
-
-```csharp
-// Example of using C64Registers
-using static RetroC64.C64Registers;
-// Also import the Mos6502Factory for instruction helpers (X,Y,A registers...etc.)
-using static Asm6502.Mos6502Factory; 
-```
-{{end}}
+> [!NOTE]
+> In order to access registers, RetroC64 provides a static class [`C64Registers`](https://github.com/RetroC64/RetroC64/blob/main/src/RetroC64.Core/C64Registers.cs) with most of the VIC-II, SID, and CIA registers defined as constants, with enums for bit flags where applicable.
+> 
+> ```csharp
+> // Example of using C64Registers
+> using static RetroC64.C64Registers;
+> // Also import the Mos6502Factory for instruction helpers (X,Y,A registers...etc.)
+> using static Asm6502.Mos6502Factory; 
+> ```

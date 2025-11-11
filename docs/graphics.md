@@ -129,8 +129,7 @@ It will produce the following output:
 
 ## Bitmaps
 
-{{NOTE do}}
-More to come in the future! 
-
-Notably the support for converting bitmaps to C64 multicolor bitmap format with proper color handling and dithering modes.
-{{end}}
+> [!NOTE]
+> More to come in the future! 
+> 
+> Notably the support for converting bitmaps to C64 multicolor bitmap format with proper color handling and dithering modes.

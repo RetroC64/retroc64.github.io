@@ -11,17 +11,15 @@ In order to run RetroC64, you need the following prerequisites installed on your
 - The [C64 VICE emulator](https://vice-emu.sourceforge.io/) (**version 3.7** or later) to run C64 programs and live programming and debugging.
 - OS: `Windows`/`macOS`/`Linux`
 
-{{TIP do}}
-
-When installing VICE, you should ensure that:
-
-- `x64sc` is in your `PATH` environment variable so that RetroC64 can find it.
-- Or set `RETROC64_VICE_BIN` environment variable to the x64sc binary
-  - Windows (x64sc.exe):
-    - Example: `$env:RETROC64_VICE_BIN=C:\Program Files\c64\GTK3VICE-3.9-win64\bin\x64sc.exe`
-  - macOS / Linux:
-    - Example: `RETROC64_VICE_BIN=/usr/bin/x64sc`
-{{end}}
+> [!TIP]
+> When installing VICE, you should ensure that:
+> 
+> - `x64sc` is in your `PATH` environment variable so that RetroC64 can find it.
+> - Or set `RETROC64_VICE_BIN` environment variable to the x64sc binary
+>   - Windows (x64sc.exe):
+>     - Example: `$env:RETROC64_VICE_BIN=C:\Program Files\c64\GTK3VICE-3.9-win64\bin\x64sc.exe`
+>   - macOS / Linux:
+>     - Example: `RETROC64_VICE_BIN=/usr/bin/x64sc`
 
 ## Your First RetroC64 Basic Program
 
@@ -79,9 +77,8 @@ And it will display the following screen in the emulator:
 
 ![HelloBasic Example](/img/RetroC64-HelloBasic.png)
 
-{{NOTE do}}
-Thanks to `dotnet watch`, you can modify the assembly code in `Program.cs`, save the file, and see the changes reflected immediately in the running VICE emulator.
-{{end}}
+> [!NOTE]
+> Thanks to `dotnet watch`, you can modify the assembly code in `Program.cs`, save the file, and see the changes reflected immediately in the running VICE emulator.
 
 ## Your First RetroC64 Assembly Program
 
@@ -145,9 +142,8 @@ And it will display the following screen in the emulator:
 
 ![HelloAsm Example](/img/RetroC64-HelloAsm.png)
 
-{{NOTE do}}
-Thanks to `dotnet watch`, you can modify the assembly code in `Program.cs`, save the file, and see the changes reflected immediately in the running VICE emulator.
-{{end}}
+> [!NOTE]
+> Thanks to `dotnet watch`, you can modify the assembly code in `Program.cs`, save the file, and see the changes reflected immediately in the running VICE emulator.
 
 ## Generated Files
 

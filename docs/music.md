@@ -185,17 +185,15 @@ var sidFile = context.GetService<IC64SidService>()
 
 The [`SidRelocationConfig`](https://github.com/RetroC64/RetroC64/blob/main/src/RetroC64.Core/Music/SidRelocationConfig.cs) allows you to specify the target address in C64 memory where the SID file will be loaded, as well as the zero page range used by the SID player routines.
 
-{{NOTE do}}
-Some SID files might not be compatible with the relocation process due to their internal structure or specific requirements. In such cases, you may need to use a different SID file or adjust the relocation parameters.
+> [!NOTE]
+> Some SID files might not be compatible with the relocation process due to their internal structure or specific requirements. In such cases, you may need to use a different SID file or adjust the relocation parameters.
+> 
+> The relocation process is necessary to extract also the range of zero-page addresses used by the SID player routines, which is essential to avoid conflicts with other parts of your C64 program.
+> 
+> Because the relocation process can take time, the `IC64SidService` caches relocated SID files in the build cache directory (`.retroC64/cache/`) to speed up subsequent builds.
 
-The relocation process is necessary to extract also the range of zero-page addresses used by the SID player routines, which is essential to avoid conflicts with other parts of your C64 program.
-
-Because the relocation process can take time, the `IC64SidService` caches relocated SID files in the build cache directory (`.retroC64/cache/`) to speed up subsequent builds.
-{{end}}
-
-{{TIP do}}
-The relocation code is actually a C# port of the fantastic [sidreloc](https://www.linusakesson.net/software/sidreloc/index.php) made by Linus Åkesson. The C# version is using the Asm6502 library to emulate the 6502 CPU and perform the relocation.
-{{end}}
+> [!TIP]
+> The relocation code is actually a C# port of the fantastic [sidreloc](https://www.linusakesson.net/software/sidreloc/index.php) made by Linus Åkesson. The C# version is using the Asm6502 library to emulate the 6502 CPU and perform the relocation.
 
 In order to extract Zero-Page addresses, the `SidFile` class provides an helper method to get the list of zero-page addresses used by the SID player routines:
 

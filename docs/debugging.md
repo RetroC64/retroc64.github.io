@@ -60,9 +60,8 @@ You can set code breakpoints by clicking in the gutter of the source code editor
 
 In order for the debugger to allow breakpoint on Asm6502 instructions, the Asm6502 assembler stores debug information when the C# code is compiled.
 
-{{TIP do}}
-If you are using a sub function to build your assembly code, by default, only the instructions within this function will have debug information, not the method itself.
-{{end}}
+> [!TIP]
+> If you are using a sub function to build your assembly code, by default, only the instructions within this function will have debug information, not the method itself.
 
 ## Disassembly View
 

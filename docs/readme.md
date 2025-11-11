@@ -23,57 +23,119 @@ When installing VICE, you should ensure that:
     - Example: `RETROC64_VICE_BIN=/usr/bin/x64sc`
 {{end}}
 
+## Your First RetroC64 Basic Program
+
+You can create a simple C64 BASIC program using RetroC64 by following these steps:
+
+1. Create a new console application:
+
+   ```shell-session
+   $ dotnet new console -n HelloBasic
+   $ cd
+   ```
+
+2. Add the required NuGet packages:
+
+   ```shell-session
+   $ dotnet add package RetroC64
+   ```
+3. Replace the content of `Program.cs` with the following code:
+
+   <a href="https://github.com/RetroC64/RetroC64-Examples/tree/main/HelloBasic" class="btn btn-primary"><span class="bi bi-github"></span> Code on GitHub ></a>    
+
+   ```csharp
+   using RetroC64.App;
+
+   // A program is a command line app that builds and runs a 6510 assembly program.
+   return await C64AppBuilder.Run<HelloBasic>(args);
+
+   /// <summary>
+   /// Represents a BASIC program that prints "HELLO, WORLD" 
+   /// Demonstrates simple variable usage for RetroC64.
+   /// </summary>
+   internal class HelloBasic : C64AppBasic
+   {
+       public HelloBasic()
+       {
+           Text = """
+                 10 X = 1
+                 20 PRINT "HELLO, WORLD" X
+                 30 REM X = X + 1
+                 40 REM GOTO 20
+                 """;
+       }
+   }
+   ```
+4. Launch dotnet watch to build and run the program with live coding support:
+
+   ```shell-session
+   $ dotnet watch -- run
+   ```
+It will output build information and launch the VICE C64 emulator:
+
+![HelloBasic Build Output](/img/RetroC64-HelloBasic-output.png)
+
+And it will display the following screen in the emulator:
+
+![HelloBasic Example](/img/RetroC64-HelloBasic.png)
+
+{{NOTE do}}
+Thanks to `dotnet watch`, you can modify the assembly code in `Program.cs`, save the file, and see the changes reflected immediately in the running VICE emulator.
+{{end}}
+
 ## Your First RetroC64 Assembly Program
 
-Create a new console application:
+1. Create a new console application:
 
-```shell-session
-$ dotnet new console -n HelloAsm
-$ cd HelloAsm
-```
+   ```shell-session
+   $ dotnet new console -n HelloAsm
+   $ cd HelloAsm
+   ```
 
-Add the required NuGet packages:
+2. Add the required NuGet packages:
 
-```shell-session
-$ dotnet add package RetroC64
-```
+   ```shell-session
+   $ dotnet add package RetroC64
+   ```
 
-Replace the content of `Program.cs` with the following code:
+3. Replace the content of `Program.cs` with the following code:
+   
+   <a href="https://github.com/RetroC64/RetroC64-Examples/tree/main/HelloAsm" class="btn btn-primary"><span class="bi bi-github"></span> Code on GitHub ></a>    
 
-```csharp
-using Asm6502;
-using RetroC64;
-using RetroC64.App;
-using static RetroC64.C64Registers;
+   ```csharp
+   using Asm6502;
+   using RetroC64;
+   using RetroC64.App;
+   using static RetroC64.C64Registers;
+   
+   // A program is a command line app that builds and runs a 6510 assembly program.
+   return await C64AppBuilder.Run<HelloAsm>(args);
+   
+   /// <summary>
+   /// A simple assembler program that changes the background and border colors.
+   /// </summary>
+   public class HelloAsm : C64AppAsmProgram
+   {
+       protected override Mos6502Label Build(C64AppBuildContext context, C64Assembler asm)
+       {
+           asm.Label(out var start)
+               .BeginCodeSection("Main")
+               .LDA_Imm(COLOR_RED)
+               .STA(VIC2_BG_COLOR0)
+               .LDA_Imm(COLOR_GREEN)
+               .STA(VIC2_BORDER_COLOR)
+               .InfiniteLoop()
+               .EndCodeSection();
+           return start;
+       }
+   }
+   ```
 
-// A program is a command line app that builds and runs a 6510 assembly program.
-return await C64AppBuilder.Run<HelloAsm>(args);
+4. Launch dotnet watch to build and run the program with live coding support:
 
-/// <summary>
-/// A simple assembler program that changes the background and border colors.
-/// </summary>
-public class HelloAsm : C64AppAsmProgram
-{
-    protected override Mos6502Label Build(C64AppBuildContext context, C64Assembler asm)
-    {
-        asm.Label(out var start)
-            .BeginCodeSection("Main")
-            .LDA_Imm(COLOR_RED)
-            .STA(VIC2_BG_COLOR0)
-            .LDA_Imm(COLOR_GREEN)
-            .STA(VIC2_BORDER_COLOR)
-            .InfiniteLoop()
-            .EndCodeSection();
-        return start;
-    }
-}
-```
-
-Launch dotnet watch to build and run the program with live coding support:
-
-```shell-session
-$ dotnet watch -- run
-```
+   ```shell-session
+   $ dotnet watch -- run
+   ```
 
 It will output build information and launch the VICE C64 emulator:
 

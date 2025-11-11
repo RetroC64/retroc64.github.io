@@ -115,20 +115,17 @@ To take control of the C64 system initialization (VIC-II, SID, CIA, etc.), you c
 
 ```csharp
 // Initialize full control of the C64 system (VIC-II, SID, CIA, etc.)
-BeginAsmInit(asm, CPUPortFlags.FullRamWithKernal);
+BeginAsmInit(asm, CPUPortFlags.FullRamWithIO);
 
 // Behind the scenes, this will generate code similar to:
 asm
-    .BeginCodeSection("Init")
-    .BeginFunction(debugFilePath, debugLineNumber)
     .SEI()
     .SetupTimeOfDayAndGetVerticalFrequency()
     .STA(0x02A6) // Store back NTSC(0)/PAL(1) flag to 0x02A6
     .DisableAllIrq()
     .SetupStack()
-    .SetupRamAccess()
-    .DisableNmi()
-    .EndFunction();
+    .SetupRamAccess(CPUPortFlags.FullRamWithIO)
+    .DisableNmi();
 ```
 
 Notice that the initialization method blocks the interrupts with `SEI` and disables NMI. If your program requires interrupts or NMI, you will need to enable them again in your code.

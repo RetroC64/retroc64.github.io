@@ -206,7 +206,7 @@ The Core package that contains all the core functionalities:
 We have the Asm6502 project that powers:
 - The assembler
 - The disassembler used by the debugger
-- And an emulator used by the SID relocator (it is a port of the famous sidreloc project made by Linus Akesson)
+- And an emulator used by the SID relocator (it is a port of the famous sidreloc project made by Linus Åkesson)
 
 And finally, Vice package that implements the custom socket binary protocol to communicate with the VICE emulator.
 

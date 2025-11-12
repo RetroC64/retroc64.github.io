@@ -6,4 +6,4 @@ doc:
   - {path: music.md}
   - {path: helpers.md}
   - {path: debugging.md}
-  - {path: slides.md}
+#  - {path: slides.md}

@@ -1,7 +1,7 @@
 # Site Settings
 author = "Alexandre Mutel"
 title = "RetroC64"
-description = "RetroC64 website"
+description = "RetroC64: Modern .NET development for the Commodore 64"
 
 basepath = ""
 baseurl = baseurl ?? "https://retroc64.github.io"
@@ -37,7 +37,6 @@ end
 
 # Resources bundle
 with bundle
-    #fontawesome = resource "npm:font-awesome" "4.7.0"
     bootstrap = resource "npm:bootstrap" "5.3.8"
     bootstrap_icons = resource "npm:bootstrap-icons" "1.13.1"
     tocbot = resource "npm:tocbot" "4.36.4"
@@ -46,14 +45,12 @@ with bundle
 
     #mermaid = resource "npm:mermaid" "11.12.1"    
     scss.includes.add bootstrap.path + "/scss"
-    #scss.includes.add fontawesome.path + "/scss"
     scss.includes.add bootstrap_icons.path + "/font"
 
     # css files
     css tocbot "/dist/tocbot.css"
-    # css pico "/css/pico.min.css"
     css "/css/prism.css"
-    css bootstrap_icons "/font/bootstrap-icons.min.css"
+    #css bootstrap_icons "/font/bootstrap-icons.min.css"
     css "/css/main.scss"
 
     # js files
@@ -77,8 +74,8 @@ with bundle
     content bootstrap_icons "/font/fonts/bootstrap-icons.*" "/fonts/"
 
     # concatenate css/js files
-    #concat = true
-    #minify = true
+    concat = true
+    #minify = true  # Cannot minify because of of CSS minification issues
 end
 
 with attributes 
@@ -105,5 +102,5 @@ with markdown
 end
 
 # Configure some HTML defaults
-html.head.title = do; ret page.title + " | " + site.title; end
+html.head.title = do; ret (page.title == "Home" ? site.title : page.title + " | " + site.title); end
 html.attributes = 'data-bs-theme="dark" lang="en" itemscope itemtype="http://schema.org/WebPage"'

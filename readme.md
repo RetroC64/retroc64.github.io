@@ -1,7 +1,6 @@
 ---
 layout: simple
 title: Home
-title_html: Welcome to RetroC64!
 og_type: website
 ---
 

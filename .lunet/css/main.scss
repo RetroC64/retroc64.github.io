@@ -161,6 +161,13 @@ button.copy-to-clipboard-button[data-copy-state="copy-error"] > span {
     padding-left: 2rem;
 }
 
+.svg-diagram {
+  width: 100%;
+  max-width: 1200px;  /* pick your target max size */
+  height: auto;
+  padding-bottom: 1em;
+}
+
 /**********************************************
  * alerts (NOTE, TIP, WARNING, CAUTION, IMPORTANT)
  **********************************************/

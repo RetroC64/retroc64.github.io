@@ -4,7 +4,11 @@ title: 🍿 Slides
 
 Hello everyone! ☺️
 
-In this page, you can find the slides from my talk "Retro Meets Modern: Commodore 64 live coding with C# and .NET 9+" presented at .NET Conf 2025.
+In this page, you can find the recording and slides from my talk "Retro Meets Modern: Commodore 64 live coding with C# and .NET 9+" presented at .NET Conf 2025.
+
+<div class="ratio ratio-16x9 mb-4">
+  <iframe src="https://www.youtube.com/embed/IjJDY7YwrSo?si=d2ec6BvVhnW_HUi_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 <div id="retroc64-carousel" class="carousel slide" data-bs-theme="light">
   <div class="carousel-indicators">

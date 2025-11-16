@@ -72,10 +72,11 @@ with bundle
     
     # copy font files
     content bootstrap_icons "/font/fonts/bootstrap-icons.*" "/fonts/"
-
+    
     # concatenate css/js files
+    scss.use_dart_sass = true # Use Dart Sass for SCSS compilation
     concat = true
-    #minify = true  # Cannot minify because of of CSS minification issues
+    minify = true
 end
 
 with attributes 

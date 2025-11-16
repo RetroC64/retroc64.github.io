@@ -27,7 +27,7 @@ jobs:
       uses: actions/configure-pages@v5
     - name: Build web site
       run: |
-          dotnet tool install --global lunet --version "0.7.*"
+          dotnet tool install --global lunet --version "0.8.*"
           lunet build
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3

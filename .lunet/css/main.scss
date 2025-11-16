@@ -21,6 +21,7 @@ $bootstrap-icons-font-dir: "/fonts";
     --color-c64-yellow: #ECE304;
     --color-c64-green: #4CAB27;
     --color-c64-blue: #3966AD;
+    --bs-font-sans-serif: #{inspect($font-family-base)};
 }
 
 @font-face {

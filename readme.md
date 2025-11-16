@@ -17,6 +17,9 @@ og_type: website
     <div class="d-flex justify-content-center gap-3 mt-4">
       <a href="/docs" class="btn btn-primary btn-lg">Get Started ></a>
       <a href="https://github.com/RetroC64/RetroC64-Examples" class="btn btn-light btn-lg">Examples ></a>
+      <button type="button" class="btn btn-danger btn-lg" data-bs-toggle="modal" data-bs-target="#youtubeModal">
+        ▶ Watch .NET Conf 2025 Demo
+      </button>      
     </div>
   </div>
 </section>
@@ -100,3 +103,38 @@ og_type: website
     </div>    
   </div>
 </section>
+
+<!-- YouTube Video Modal -->
+<div class="modal fade" id="youtubeModal" tabindex="-1" aria-labelledby="youtubeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="youtubeModalLabel">🍿 RetroC64 .NET Conf 2025 Demo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="ratio ratio-16x9">
+          <iframe id="youtubeVideo"
+                  data-base="https://www.youtube.com/embed/IjJDY7YwrSo"
+                  src="https://www.youtube.com/embed/IjJDY7YwrSo"
+                  title="YouTube video player" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var modal = document.getElementById('youtubeModal');
+  modal.addEventListener('show.bs.modal', function () {
+    var iframe = document.getElementById('youtubeVideo');
+    var base = iframe.getAttribute('data-base');
+    iframe.src = base + '?autoplay=1&rel=0';
+  });
+  modal.addEventListener('hidden.bs.modal', function () {
+    var iframe = document.getElementById('youtubeVideo');
+    iframe.src = iframe.getAttribute('data-base');
+  });
+</script>

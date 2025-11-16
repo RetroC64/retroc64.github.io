@@ -128,11 +128,24 @@ og_type: website
 
 <script>
   var modal = document.getElementById('youtubeModal');
-  modal.addEventListener('show.bs.modal', function () {
-    var iframe = document.getElementById('youtubeVideo');
-    var base = iframe.getAttribute('data-base');
-    iframe.src = base + '?autoplay=1&rel=0';
+  var playTimer; // delay handle
+
+  // Start auto-load/autoplay 0.5s after modal is fully shown
+  modal.addEventListener('shown.bs.modal', function () {
+    clearTimeout(playTimer);
+    playTimer = setTimeout(function () {
+      var iframe = document.getElementById('youtubeVideo');
+      var base = iframe.getAttribute('data-base');
+      iframe.src = base + '?autoplay=1&rel=0';
+    }, 150);
   });
+
+  // If user closes before delay fires, cancel it
+  modal.addEventListener('hide.bs.modal', function () {
+    clearTimeout(playTimer);
+  });
+
+  // Stop playback by resetting src after modal fully hidden
   modal.addEventListener('hidden.bs.modal', function () {
     var iframe = document.getElementById('youtubeVideo');
     iframe.src = iframe.getAttribute('data-base');
